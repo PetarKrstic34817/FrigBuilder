@@ -24,8 +24,8 @@
                                 <div class="collapse" id="collapseInstructions">
                                 <p>
                                     '+' : Adds frig codes together<br>
-                                    {number} + ';' : repeates the frig code {number} times<br>
-                                    eg. "SC*3+3;BigWin+2;L2*3" gives 1x SC*3, 3x BigWin and 2x L2*3
+                                    {number} + ';' : repeats the frig code {number} times<br>
+                                    eg. "BGSC*3+3;FSBigWin+2;FSL2*3" gives 1x BGSC*3, 3x FSBigWin and 2x FSL2*3
                                 </p>
                                 </div><br>
                                 <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDropdowns" aria-expanded="false" aria-controls="collapseDropdowns">
@@ -71,7 +71,7 @@
                                 </div>
                                 <br><br>
                                 Input code manually:
-                                <textarea class="form-control" id="input" placeholder="eg. 3;L1*3+Wild*3+4;L6*3"></textarea>
+                                <textarea class="form-control" id="input" placeholder="eg. 3;BGL1*3+BGWild*3+4;BGL6*3"></textarea>
                                 <br>
                                 <input type="button" class="form-control" onclick="clean()" value="CLEAR"><br>
                                 <input type="button" class="form-control" onclick="CalculateFrig()" value="CREATE FRIG">
