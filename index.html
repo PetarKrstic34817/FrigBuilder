@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+  </head>
+  <body onload="printConfig()">
+    <main>
+            <center>
+                <div class="w-75 p-3">
+                    <h1>FRIG BUILDER</h1>
+                    <hr/>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 75%; padding-right: 20px;">
+                                <h2>INPUT FRIG CODE</h2>
+                                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructions" aria-expanded="false" aria-controls="collapseInstructions">
+                                    Formatting instructions
+                                </button>
+                                <div class="collapse" id="collapseInstructions">
+                                <p>
+                                    '+' : Adds frig codes together<br>
+                                    {number} + ';' : repeates the frig code {number} times<br>
+                                    eg. "SC*3+3;BigWin+2;L2*3" gives 1x SC*3, 3x BigWin and 2x L2*3
+                                </p>
+                                </div><br>
+                                <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDropdowns" aria-expanded="false" aria-controls="collapseDropdowns">
+                                    Add Code using dropdowns
+                                </button>
+                                <div class="collapse" id="collapseDropdowns">
+                                    <div class="card card-body">
+                                        <table>
+                                            <tr>
+                                                <td style="padding-right: 20px; padding-left: 20px;">
+                                                    Number of repetitions
+                                                </td>
+                                                <td style="padding-right: 20px; padding-left: 20px;">
+                                                    frig code to be added
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-right: 20px; padding-left: 20px;">
+                                                    <div class="input-group">
+                                                        <input class="form-control w-75" type="range" id="repsRange" min="1" max="20" value="1" oninput="repsRange()">
+                                                        <input class="form-control w-25" type="text" id="repsNum" value="1" onkeyup="repsNum()">
+                                                    </div>
+                                                </td>
+                                                <td style="padding-right: 20px; padding-left: 20px;">
+                                                    <select class="form-control" id="frigCodes">
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <center>
+                                            <input class="form-control w-25" type="button" value="Add Frig" onclick="addFrig()">
+                                        </center>
+                                    </div>
+                                </div>
+                                <br><br>
+                                Input code manually:
+                                <textarea class="form-control" id="input" placeholder="eg. 3;L1*3+Wild*3+4;L6*3"></textarea>
+                                <br>
+                                <input type="button" class="form-control" onclick="clean()" value="CLEAR"><br>
+                                <input type="button" class="form-control" onclick="CalculateFrig()" value="CREATE FRIG">
+                                <br>
+                                <br>
+                                <h2>OUTPUT FRIG</h2>
+                                <textarea class="form-control" id="output" readonly></textarea>
+                                <br><br><br><br>
+                            </td>
+                            <td>
+                                <h2>AVAILABLE CODES</h2>
+                                <p id="config"></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </center>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
