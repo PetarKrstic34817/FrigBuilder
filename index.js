@@ -2,20 +2,21 @@ function getConfig(){
     return {
         "FrigMaps": 
         {
-            "Wild*3":"20,20,20,1,0",
-            "H1*3":"30,0,23,1,0",
-            "H2*3":"30,0,23,1,0",
-            "H3*3":"30,0,23,1,0",
-            "L1*3":"30,0,23,1,0",
-            "L2*3":"30,0,23,1,0",
-            "L3*3":"30,0,23,1,0",
-            "L4*3":"30,0,23,1,0",
-            "L5*3":"30,0,23,1,0",
-            "L6*3":"30,0,23,1,0",
-            "SC*3":"0,0,6,0,2",
-            "BigWin":"7,6,12,7,9",
-            "MegaWin":"29,53,31,24,36",
-            "EpicWin":"29,53,31,24,42",
+            "BGWild*3":"20,20,20,1,0",
+            "BGH1*3":"30,0,23,1,0",
+            "BGH2*3":"30,0,23,1,0",
+            "BGH3*3":"30,0,23,1,0",
+            "BGL1*3":"30,0,23,1,0",
+            "TTL1*3":"0,2,5,10,10",
+            "BGL2*3":"30,0,23,1,0",
+            "BGL3*3":"30,0,23,1,0",
+            "BGL4*3":"30,0,23,1,0",
+            "BGL5*3":"30,0,23,1,0",
+            "BGL6*3":"30,0,23,1,0",
+            "BGSC*3":"0,0,6,0,2",
+            "BGBigWin":"7,6,12,7,9",
+            "BGMegaWin":"29,53,31,24,36",
+            "BGEpicWin":"29,53,31,24,42",
             "TTSC*3":"2,0,8,0,4"
         }
     };
@@ -95,4 +96,27 @@ function addFrig()
 function clean()
 {
     document.getElementById("input").value = "";
+}
+
+function filterFrigs()
+{
+    const config = Object.entries(getConfig().FrigMaps);
+    let selectFrigCodes = document.getElementById('frigCodes');
+    while (selectFrigCodes.firstChild) {
+        selectFrigCodes.firstChild.remove()
+    }
+    for(i=0;i<config.length;i++){
+        let optFC = document.createElement('option');
+        optFC.value = config[i][0];
+        optFC.innerHTML = config[i][0];
+        if(document.getElementById('frigFilter').value == "ALL"){
+            selectFrigCodes.appendChild(optFC);
+        }
+        else{
+            if(config[i][0].startsWith(document.getElementById('frigFilter').value)){
+                selectFrigCodes.appendChild(optFC);
+            }
+        }
+    }
+
 }

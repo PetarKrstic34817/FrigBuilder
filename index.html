@@ -43,15 +43,23 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="padding-right: 20px; padding-left: 20px;">
+                                                <td style="padding-right: 20px; padding-left: 20px; width: 60%;">
                                                     <div class="input-group">
                                                         <input class="form-control w-75" type="range" id="repsRange" min="1" max="20" value="1" oninput="repsRange()">
                                                         <input class="form-control w-25" type="text" id="repsNum" value="1" onkeyup="repsNum()">
                                                     </div>
                                                 </td>
-                                                <td style="padding-right: 20px; padding-left: 20px;">
-                                                    <select class="form-control" id="frigCodes">
-                                                    </select>
+                                                <td style="padding-right: 20px; padding-left: 20px; width: 40%;">
+                                                    <div class="input-group">
+                                                        <select class="form-control w-25" id="frigFilter" onchange="filterFrigs()">
+                                                            <option value="ALL">ALL</option>
+                                                            <option value="BG">BG</option>
+                                                            <option value="FS">FS</option>
+                                                            <option value="TT">TT</option>
+                                                        </select>
+                                                        <select class="form-control w-75" id="frigCodes">
+                                                        </select>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>
