@@ -96,6 +96,7 @@ function CalculateFrig(){
 
     document.getElementById("output").value = output;
 
+    document.getElementById("previousFrigs").innerHTML = document.getElementById("previousFrigs").innerHTML + codeToTranslate + "  :  " + output + "<br>";
 }
 
 function MapToFrig(value){
